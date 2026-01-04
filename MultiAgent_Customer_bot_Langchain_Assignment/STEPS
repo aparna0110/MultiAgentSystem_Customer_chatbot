@@ -1,0 +1,5 @@
+1-) Based on usecase what is needed agent, llm, graph, knowledge(db and vector store connections), prompts, tests, app.py, requirements.txt
+2-) Create a folder structure with basic skelton files
+3-) Try to make llm work with langchain with Azureopenai -- now llm is working-Done
+
+4-) Next step is -- Try making tier1 agent working condition along with RAG where we can have embeddings data for FAQ question answers
