@@ -1,0 +1,41 @@
+1-)Tiered Agent Design
+
+	Tier-1 Agent: Handles FAQs using a vector store + retrieval augmented generation (RAG). Fast, first-line answers with confidence scoring.
+
+	Tier-2 Agent: Handles escalations for low-confidence Tier-1 responses. Refines answers using LLMs and prompt templates.
+
+	Manager / Audit Agent: Reviews final output for approval or flags issues. Optional but ensures quality control.
+
+2-) Confidence-Based Routing
+
+	Queries are routed based on Tier-1 confidence score:
+
+	High confidence → skip Tier-2 → Manager review.
+
+	Low confidence → Tier-2 → Manager.
+
+	Ensures efficient use of resources and faster responses for simple queries.
+
+3-) LLM & Embeddings Decisions
+
+	Azure OpenAI models used for LLM responses (chat / answer generation).
+
+	Vector store uses text embeddings for document retrieval (can use Hugging Face embeddings if Azure embeddings unavailable).
+
+	Embeddings + RAG improve contextually relevant answers.
+
+4-) LangGraph Orchestration
+
+	Graph-based workflow represents agents as nodes, and routing logic as edges.
+
+	Enables conditional branching, logging, and potential future expansion.
+
+	Graph can be saved as PNG / Mermaid for visual documentation.
+
+5-) Evaluation & Monitoring
+
+	Confidence metrics + DeepEval used to assess answer quality.
+
+	Metrics track Tier-1 accuracy, escalation rate, Manager interventions, and end-to-end answer correctness.
+
+	Supports iterative model improvements and threshold tuning.
