@@ -8,6 +8,13 @@ Tier-2 Escalation Agent (LLM reasoning)
 Manager/Audit Agent (quality control)
 Flow diagram is available in graph/agent_flow.png.
 
+# Tech Stack used
+
+LangGraph
+LangChain
+Azure OpenAi
+DeepEval
+
 # IMPLEMENTATION in working---
 
 Payload of RestApi- 
