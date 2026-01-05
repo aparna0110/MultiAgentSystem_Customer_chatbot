@@ -8,6 +8,31 @@ Tier-2 Escalation Agent (LLM reasoning)
 Manager/Audit Agent (quality control)
 Flow diagram is available in graph/agent_flow.png.
 
+# Architecture
+
+       +----------------+
+       |   User Query   |
+       +--------+-------+
+                |
+                v
+       +--------+-------+
+       | Tier-1 Agent   |
+       | (FAQ + RAG)    |
+       +--------+-------+
+                |
+        Confidence >= 0.6
+         /                \
+       Yes                 No
+      /                     \
+	Manager Agent		    +--------+----------+
+       |              | Tier-2 Escalation |
+    Return Ans        | Agent             |
+                      +--------+----------+
+                             |
+                          Manager Agent
+						                 |
+                           Return Ans
+
 # Tech Stack used
 
 LangGraph
